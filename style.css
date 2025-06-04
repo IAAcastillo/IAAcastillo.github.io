@@ -1,8 +1,8 @@
 body {
     background: #fff4e8;
-    color: rgb(118, 78, 36);
+    color: #764e24;
     padding: 10px;
-    font-family: Arial, sans-serif;
+    font-family: "Capriola", sans-serif;
 }
 
 #all-contents {
@@ -17,6 +17,7 @@ nav {
     padding: 10px;
     justify-content: space-between;
     margin-bottom: 20px;
+    border-radius: 15px;
 }
 
 h1 {
@@ -49,6 +50,7 @@ main {
     background: #fb9cb5;
     display: flex;
     margin-top: 20px;
+    border-radius: 15px;
 }
 
 .sidebar {
@@ -56,8 +58,9 @@ main {
     padding: 10px;
 }
 
-.sidebar.img {
+.sidebar-img {
     width: 200px;
+    border-radius: 15px;
 }
 
 .content {
@@ -68,10 +71,87 @@ main {
 /* interests section styles */
 #interests {
     border: 4px rgb(255, 255, 255) ridge;
+    border-radius: 15px;
     padding: 8px;
     margin-top: 20px;
 }
 
 h2, h3 {
     margin: 0px;
+}
+
+/* Portfolio sty;es */
+.content h1 {
+    color: #523414;
+}
+
+#portfolio {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#portfolio li {
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+#portfolio li:hover {
+    background: #ffe1e1;
+}
+
+#portfolio a {
+    text-decoration: none;
+    color: #454545;
+}
+
+/* responsive web design */
+@media screen and (min-width: 120px) and (max-width: 1080px) {
+  main {
+    height: 100ch;
+    zoom: 1.5;
+    display: grid;
+  }
+
+  h1 {
+    font-size: 44px;
+  }
+
+  h2 {
+    font-size: 42px;
+  }
+
+  h3 {
+    font-size: 36px;
+  }
+
+  #all-contents {
+    height: 100ch;
+    margin: none;
+  }
+
+  a {
+    font-size: 42px;
+  }
+
+  .sidebar {
+    margin-right: 0px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sidebar-img {
+    width: 100%;
+  }
+
+  p,
+  li {
+    font-size: 24px;
+  }
+
+  .content {
+    align-content: center;
+    justify-content: center;
+  }
 }
