@@ -363,7 +363,7 @@ function projectileCollision() {
 }
 
 function deathOfPlayer() {
-  ctx.fillStyle = "grey";
+  ctx.fillStyle = "pink";
   ctx.fillRect(
     canvas.width / 4,
     canvas.height / 6,
@@ -380,7 +380,7 @@ function deathOfPlayer() {
   );
   ctx.font = "500% serif";
   ctx.fillText(
-    "Hit any key to restart",
+    "Hit any key to restart!",
     canvas.width / 4,
     canvas.height / 6 + canvas.height / 3,
     (canvas.width / 16) * 14

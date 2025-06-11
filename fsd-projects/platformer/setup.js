@@ -92,10 +92,10 @@ let halleImage;
 let animationDetails = {};
 
 var collectableList = {
-  database: { image: "images/collectables/database.png" },
-  diamond: { image: "images/collectables/diamond-head.png" },
-  grace: { image: "images/collectables/grace-head.png" },
-  kennedi: { image: "images/collectables/kennedi-head.png" },
-  max: { image: "images/collectables/max-head.png" },
-  steve: { image: "images/collectables/steve-head.png" },
+  database: { image: "https://kpopsource.com/attachments/1712267021890-png.225819/" },
+  diamond: { image: "https://assets.stickpng.com/thumbs/5a67a18f01d15068bdfe87c2.png" },
+  grace: { image: "https://images.squarespace-cdn.com/content/v1/6670add926f2a64cd00fb0e7/380ff076-4839-4b29-bb0b-53887285d56d/character+2.png" },
+  kennedi: { image: "https://images.squarespace-cdn.com/content/v1/6670add926f2a64cd00fb0e7/d2f9b9c1-ab9c-4fe2-a793-d6a8634ac920/character+chii.png?format=1000w" },
+  max: { image: "https://www.pngmart.com/files/23/Pompompurin-PNG-Isolated-Pic.png" },
+  steve: { image: "https://w1.pngwing.com/pngs/370/790/png-transparent-bear-rilakkuma-kawaii-sanx-cuteness-film-storytelling-staness-jonekos-thumbnail.png" },
 };
