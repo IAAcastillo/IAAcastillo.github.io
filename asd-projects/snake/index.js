@@ -30,6 +30,11 @@ var KEY = {
   DOWN: 40,
 };
 
+//CHALLENGE VARIABLES
+
+var colors = ["red", "orange", "yellow", "green", "blue", "purple"];
+var colorIndex = 0
+
 // interval variable required for stopping the update function when the game ends
 var updateInterval;
 
@@ -124,9 +129,9 @@ function moveSnake() {
     stored in the Array snake.body and each part knows its current 
     column/row properties. 
   */
- for (var i = Array.length - 1; i >= 0; i--) {
-    var currentSnakeSquare = snake.body[snake.body.length - i];
-    var snakeSquareInFront = snake.body[i];
+ for (var i = snake.body.length - 1; i > 0; i--) {
+    var currentSnakeSquare = snake.body[i];
+    var snakeSquareInFront = snake.body[i - 1];
 
     moveBodyAToBodyB(currentSnakeSquare, snakeSquareInFront);
     repositionSquare(currentSnakeSquare);
@@ -180,7 +185,21 @@ function hasHitWall() {
     HINT: What will the row and column of the snake's head be if this were the case?
   */
 
+ if (snake.head.row < 0){
+  return true;
+ }
 
+if (snake.head.row > ROWS - 1){
+  return true;
+}
+
+ if (snake.head.column < 0){
+  return true;
+ }
+
+if (snake.head.column > COLUMNS - 1){
+  return true;
+}
 
   return false;
 }
@@ -192,8 +211,11 @@ function hasCollidedWithApple() {
     
     HINT: Both the apple and the snake's head are aware of their own row and column
   */
-
-
+if (snake.head.row === apple.row){
+  if (snake.head.column === apple.column){
+  return true;
+}
+}
 
   return false;
 }
@@ -221,9 +243,13 @@ function hasCollidedWithSnake() {
     HINT: Each part of the snake's body is stored in the snake.body Array. The
     head and each part of the snake's body also knows its own row and column.
   */
-
-
-
+for (var i = 1; i < snake.body.length - 1; i++){
+  if (snake.head.row === snake.body[i].row){
+    if (snake.head.column === snake.body[i].column){
+      return true;
+    }
+  }
+}
   return false;
 }
 
@@ -291,6 +317,7 @@ if (snake.body.length === 0) {
   snakeSquare.element.attr("id", "snake-head");
 }
 
+
 // add the square to the snake’s body and update the tail
 snake.body.push(snakeSquare);
 snake.tail = snakeSquare;
@@ -355,7 +382,13 @@ function getRandomAvailablePosition() {
       not occupied by a snakeSquare in the snake's body. If it is then set 
       spaceIsAvailable to false so that a new position is generated.
     */
-
+   for (var i = 0; i > snake.body.length - 1; i++){
+    if (randomPosition.column === snake.body[i].column){
+      if (randomPosition.row === snake.body[i].row){
+        spaceIsAvailable = false;
+      }
+    }
+   }
 
 
   }
