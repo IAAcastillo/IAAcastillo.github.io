@@ -30,10 +30,6 @@ var KEY = {
   DOWN: 40,
 };
 
-//CHALLENGE VARIABLES
-
-var colors = ["red", "orange", "yellow", "green", "blue", "purple"];
-var colorIndex = 0
 
 // interval variable required for stopping the update function when the game ends
 var updateInterval;
