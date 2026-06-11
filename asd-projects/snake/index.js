@@ -30,6 +30,15 @@ var KEY = {
   DOWN: 40,
 };
 
+//challenge variables
+var color = ["red", "orange", "yellow", "green", "blue", "purple"];
+var colorIndex = 0;
+
+/*
+makeSnakeSquare(row, column);
+snake.tail.element.css("backgroundColor", colors[colorIndex]);
+colorIndex = (colorIndex + 1) % color.length;
+*/
 
 // interval variable required for stopping the update function when the game ends
 var updateInterval;
@@ -317,6 +326,7 @@ if (snake.body.length === 0) {
 // add the square to the snake’s body and update the tail
 snake.body.push(snakeSquare);
 snake.tail = snakeSquare;
+
 }
 
 /* 
