@@ -22,7 +22,7 @@ function makeDot(top, left, elementID){
 }
 
 
-function rollDie(dieId){
+function rollDie(dieID){
   $(dieID).empty();
   var randomNum = Math.ceil(Math.random() * 6);
   console.log(randomNum);
