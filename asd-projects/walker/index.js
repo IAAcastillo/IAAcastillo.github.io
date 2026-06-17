@@ -13,8 +13,8 @@ function runProgram(){
   var walker = {
     x: 0, //horizontal left/right
     y: 0, //vertical up/down
-    speedX: 20, //horizontal
-    speedY: 30 //vertical
+    speedX: 0, //horizontal
+    speedY: 0 //vertical
   }
   
 
@@ -36,6 +36,8 @@ const KEY = {
 
   Note: You can have multiple event listeners for different types of events.
   */
+
+  $(document).on('keyup', handleKeyUp);                          
   $(document).on('keydown', handleKeyDown);                          
 
   ////////////////////////////////////////////////////////////////////////////////
@@ -48,6 +50,7 @@ const KEY = {
   */
   function newFrame() {
     repositionGameItem();
+    wallCollision();
     redrawGameItem();
 
   }
@@ -61,30 +64,59 @@ const KEY = {
   function handleKeyDown(event) {
     console.log(event.which);
     if (event.which === KEY.LEFT) {
+      walker.speedX = -5;
       console.log("left pressed");
     } 
     if (event.which === KEY.DOWN) {
+      walker.speedY = 5;
       console.log("down pressed");
     }
     if (event.which === KEY.RIGHT) {
+      walker.speedX = 5;
       console.log("right pressed");
     }
     if (event.which === KEY.UP) {
+      walker.speedY = -5;
       console.log("up pressed");
+    }
+  }
+
+  function handleKeyUp(event) {
+    if (event.which === KEY.DOWN || KEY.UP){
+      walker.speedY = 0
+    }
+    if (event.which === KEY.RIGHT || KEY.LEFT){
+      walker.speedX = 0
     }
   }
 
   ////////////////////////////////////////////////////////////////////////////////
   ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
+
+function wallCollision(){
+  if (walker.x + 50 > $("#board").width()){ // right
+    walker.x -= walker.speedX;
+  }
+  if (walker.x < 0){ // left
+    walker.x -= walker.speedX;
+  }
+  if (walker.y + 50 > $("#board").height()){ //bottom
+    walker.y -= walker.speedY;
+  }
+  if (walker.y < 0){ // top
+    walker.y -= walker.speedY;
+  }
+}
+
 function repositionGameItem(){
    walker.x += walker.speedX
    walker.y += walker.speedY
 }
 
 function redrawGameItem(){
-  $("walker").css("left", walker.x);
-  $("walker").css("right", walker.y);
+  $("#walker").css("left", walker.x);
+  $("#walker").css("top", walker.y);
 }
   
   function endGame() {
