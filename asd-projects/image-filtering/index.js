@@ -20,7 +20,7 @@ function resetAndRender() {
 // all of your apply functions
 function applyAndRender() {
   // Multiple TODOs: Call your apply function(s) here
-
+  applyFilter();
   
 
   // do not change the below line of code
@@ -32,6 +32,14 @@ function applyAndRender() {
 /////////////////////////////////////////////////////////
 
 // TODO 1, 2, 3 & 5: Create the applyFilter function here
+function applyFilter(){
+  for (var r = 0; r < image.length; r++){
+    for (var c = 0; c < image[r].length; c++){
+      // check2seeifworks console.log(image[r][c]);
+      var pixel = 
+    }
+  }
+}
 
 
 // TODO 9 Create the applyFilterNoBackground function
